@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/jpeg" href="profile.jpeg">
+    <title>Skhaba - About Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .team-card {
+            transition: all 0.3s ease;
+        }
+        .team-card:hover {
+            transform: translateY(-10px);
+        }
+        .stats-counter {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <img
+src="profile.jpeg" alt="Skhaba
+Logo" class="w-12 h-12 rounded-full object-cover">
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm transition-colors">Home</a>
+                        <a href="services.html" class="text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm transition-colors">Services</a>
+                        <a href="portfolio.html" class="text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm transition-colors">Portfolio</a>
+                        <a href="about.html" class="text-black font-semibold px-3 py-2 rounded-md text-sm">About Us</a>
+                        <a href="contact.html" class="text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm transition-colors">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-purple-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="text-gray-700 hover:text-black block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="services.html" class="text-gray-700 hover:text-black block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                <a href="portfolio.html" class="text-gray-700 hover:text-black block px-3 py-2 rounded-md text-base font-medium">Portfolio</a>
+                <a href="about.html" class="text-black block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                <a href="contact.html" class="text-gray-700 hover:text-black block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main>
+        <section id="about" class="hero-gradient min-h-screen flex items-center justify-center pt-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="fade-in">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                        About Skhaba Gallery
+                    </h1>
+                    <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto">
+                        We are passionate storytellers dedicated to capturing life's most precious moments through the art of photography and videography
+                    </p>
+                    <div class="space-x-4">
+                       
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Story Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Our Story</h2>
+                        <p class="text-lg text-gray-600 mb-6">
+                            Founded in 2019, Skhaba Gallery began as a passion project between friends who shared a love for capturing authentic moments. What started as weekend photography sessions has grown into a full-service creative studio specializing in weddings, portraits, events, and video production.
+                        </p>
+                        <p class="text-lg text-gray-600 mb-6">
+                            Our name "Skhaba" means "to shine" in Zulu, reflecting our mission to help our clients shine in every frame. We believe that every moment has a story worth telling, and we're here to tell it beautifully.
+                        </p>
+                        <p class="text-lg text-gray-600 mb-8">
+                            Today, we've expanded our services to include music video production, podcast recording, and commercial videography, always maintaining our core values of authenticity, creativity, and excellence.
+                        </p>
+                        <div class="flex space-x-4">
+                            <div class="text-center">
+                                <div class="stats-counter">5+</div>
+                                <p class="text-gray-600">Years Experience</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="stats-counter">70+</div>
+                                <p class="text-gray-600">Happy Clients</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="stats-counter">30+</div>
+                                <p class="text-gray-600">Events Captured</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-br from-purple-100 to-pink-100 rounded-lg p-8 h-96 flex items-center justify-center">
+                        <div class="text-center">
+                           
+                            <p class="text-gray-600 font-medium text-lg">Capturing Stories Since 2019</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Meet the Team Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Meet Our Team</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Our talented team of photographers and videographers brings diverse skills and creative perspectives to every project
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Team Member 1 -->
+                    <div class="team-card bg-white rounded-lg shadow-lg overflow-hidden">
+    <div class="h-64 w-full relative">
+        <!-- Full-cover image -->
+        <img src="cthesh.jpeg" alt="Team Member" class="w-full h-full object-cover">
+        <!-- Optional overlay text -->
+        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30">
+            <p class="text-white text-lg font-medium"></p>
+        </div>
+    </div>
+</div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Sthembiso Ngubane</h3>
+                            <p class="text-purple-600 font-semibold mb-3">Lead Photographer & Founder</p>
+                            <p class="text-gray-600 mb-4">
+                                With over 8 years of experience, Sthesh specializes in wedding and portrait photography. His eye for detail and ability to capture authentic emotions makes every session memorable.
+                            </p>
+                            <div class="flex space-x-3">
+                                <a href="#" class="text-gray-400 hover:text-purple-600 transition-colors">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12.017 0C8.396 0 7.989.013 7.041.048 6.094.082 5.52.204 5.036.388a3.9 3.9 0 0 0-1.414.923A3.9 3.9 0 0 0 2.7 2.725c-.183.484-.306 1.058-.34 2.005C2.326 5.678 2.313 6.085 2.313 9.706v4.588c0 3.621.013 4.028.048 4.976.034.947.157 1.521.34 2.005a3.9 3.9 0 0 0 .923 1.414 3.9 3.9 0 0 0 1.414.923c.484.183 1.058.306 2.005.34.948.035 1.355.048 4.976.048h4.588c3.621 0 4.028-.013 4.976-.048.947-.034 1.521-.157 2.005-.34a3.9 3.9 0 0 0 1.414-.923 3.9 3.9 0 0 0 .923-1.414c.183-.484.306-1.058.34-2.005.035-.948.048-1.355.048-4.976V9.706c0-3.621-.013-4.028-.048-4.976-.034-.947-.157-1.521-.34-2.005a3.9 3.9 0 0 0-.923-1.414A3.9 3.9 0 0 0 19.229.388c-.484-.183-1.058-.306-2.005-.34C16.276.013 15.869 0 12.248 0h-.23zm-.117 5.4a6.6 6.6 0 1 1 0 13.2 6.6 6.6 0 0 1 0-13.2zm8.4-2.205a1.54 1.54 0 1 1-3.08 0 1.54 1.54 0 0 1 3.08 0zM12 7.25a4.75 4.75 0 1 0 0 9.5 4.75 4.75 0 0 0 0-9.5z"/>
+                                    </svg>
+                                </a>
+                                <a href="#" class="text-gray-400 hover:text-purple-600 transition-colors">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+        <!-- Our Approach Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Approach</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        We believe in creating authentic, beautiful content that tells your unique story
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="bg-gradient-to-br from-purple-100 to-pink-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-10 h-10 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Authentic Moments</h3>
+                        <p class="text-gray-600">
+                            We capture genuine emotions and natural interactions, creating timeless memories that reflect your true personality and story.
+                        </p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="bg-gradient-to-br from-blue-100 to-indigo-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-10 h-10 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Creative Vision</h3>
+                        <p class="text-gray-600">
+                            Our artistic approach combines technical excellence with creative innovation to produce visually stunning and emotionally compelling content.
+                        </p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="bg-gradient-to-br from-green-100 to-emerald-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Professional Excellence</h3>
+                        <p class="text-gray-600">
+                            We maintain the highest standards in every aspect of our work, from initial consultation to final delivery, ensuring exceptional results every time.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="py-20 bg-black">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">By the Numbers</h2>
+                    <p class="text-xl text-gray-300">Our track record speaks for itself</p>
+                </div>
+
+                <div class="grid md:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <div class="stats-counter text-white">70+</div>
+                        <p class="text-gray-300 text-lg">Happy Clients</p>
+                    </div>
+                    <div>
+                        <div class="stats-counter text-white">30+</div>
+                        <p class="text-gray-300 text-lg">Events Captured</p>
+                    </div>
+                    <div>
+                        <div class="stats-counter text-white">5+</div>
+                        <p class="text-gray-300 text-lg">Years Experience</p>
+                    </div>
+                    <div>
+                        <div class="stats-counter text-white">20+</div>
+                        <p class="text-gray-300 text-lg">Music Videos</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Why Choose Skhaba Gallery?</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        We go above and beyond to ensure your experience with us is exceptional
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">Personalized Service</h3>
+                        <p class="text-gray-600 text-sm">Tailored approach for every client's unique needs and vision</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">Cutting-Edge Equipment</h3>
+                        <p class="text-gray-600 text-sm">Latest professional cameras and editing technology</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">Quick Turnaround</h3>
+                        <p class="text-gray-600 text-sm">Fast delivery without compromising on quality</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">Complete Packages</h3>
+                        <p class="text-gray-600 text-sm">Full-service solutions from planning to final delivery</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">What Our Clients Say</h2>
+                    <p class="text-lg text-gray-600">Don't just take our word for it</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-gradient-to-br from-pink-100 to-purple-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-purple-600 font-bold">MF</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Mokoena Family</h4>
+                                <p class="text-gray-600 text-sm">Wedding Clients</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic">
+                            "Skhaba Gallery captured our wedding day perfectly! Every emotion, every moment was beautifully preserved. We couldn't be happier with the results."
+                        </p>
+                        <div class="flex text-yellow-400 mt-4">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-gradient-to-br from-blue-100 to-indigo-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-blue-600 font-bold">BS</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800"> bravo store.</h4>
+                                <p class="text-gray-600 text-sm">Corporate Client</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic">
+                            "Professional, creative, and reliable. Skhaba Gallery delivered exceptional corporate event photography that exceeded our expectations."
+                        </p>
+                        <div class="flex text-yellow-400 mt-4">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-gradient-to-br from-green-100 to-emerald-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-green-600 font-bold">L</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Luhhomiefrm37</h4>
+                                <p class="text-gray-600 text-sm">Music Artist</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic">
+                            "The music video they created for my latest single was incredible! Their creative vision brought my song to life in ways I never imagined."
+                        </p>
+                        <div class="flex text-yellow-400 mt-4">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-black">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Work Together?</h2>
+                <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                    Let's create something beautiful together. Contact us today to discuss your project!
+                </p>
+                <button class="bg-white text-black px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                onclick="window.location.href='contact.html'">
+                    Get In Touch
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Skhaba Gallery</h3>
+                    <p class="text-gray-400">Capturing life's precious moments through the art of photography.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="portfolio.html" class="text-gray-400 hover:text-white transition-colors">Portfolio</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Photography Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Weddings</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Portraits</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Events</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Family Photos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <p class="text-gray-400 mb-2">📧 skhabagallery09@gmail.com</p>
+                    <p class="text-gray-400 mb-2">📞 +27 (63) 605-6900</p>
+                    <p class="text-gray-400 mb-4">📍 No Physical Offices, Based Remotely</p>
+                    <div class="flex space-x-4">
+                        <a href="https://wa.me/27636056900" target="_blank" class="text-gray-400 hover:text-white transition-colors" title="WhatsApp">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/share/1Bfcm8YqCq/?mibextid=wwXIfr" target="_blank" class="text-gray-400 hover:text-white transition-colors" title="Facebook">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.tiktok.com/@skhaba_art_gallery?_t=ZS-90bG0aRPVwb&_r=1" target="_blank" class="text-gray-400 hover:text-white transition-colors" title="TikTok">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/skhaba_art_gallery?igsh=cnV1dmlnMG5xZGQx" target="_blank" class="text-gray-400 hover:text-white transition-colors" title="Instagram">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C8.396 0 7.989.013 7.041.048 6.094.082 5.52.204 5.036.388a3.9 3.9 0 0 0-1.414.923A3.9 3.9 0 0 0 2.7 2.725c-.183.484-.306 1.058-.34 2.005C2.326 5.678 2.313 6.085 2.313 9.706v4.588c0 3.621.013 4.028.048 4.976.034.947.157 1.521.34 2.005a3.9 3.9 0 0 0 .923 1.414 3.9 3.9 0 0 0 1.414.923c.484.183 1.058.306 2.005.34.948.035 1.355.048 4.976.048h4.588c3.621 0 4.028-.013 4.976-.048.947-.034 1.521-.157 2.005-.34a3.9 3.9 0 0 0 1.414-.923 3.9 3.9 0 0 0 .923-1.414c.183-.484.306-1.058.34-2.005.035-.948.048-1.355.048-4.976V9.706c0-3.621-.013-4.028-.048-4.976-.034-.947-.157-1.521-.34-2.005a3.9 3.9 0 0 0-.923-1.414A3.9 3.9 0 0 0 19.229.388c-.484-.183-1.058-.306-2.005-.34C16.276.013 15.869 0 12.248 0h-.23zm-.117 5.4a6.6 6.6 0 1 1 0 13.2 6.6 6.6 0 0 1 0-13.2zm8.4-2.205a1.54 1.54 0 1 1-3.08 0 1.54 1.54 0 0 1 3.08 0zM12 7.25a4.75 4.75 0 1 0 0 9.5 4.75 4.75 0 0 0 0-9.5z"/>
+                            </svg>
+                        </a>
+                        <a href="https://youtube.com/@skhabagallery09?si=nxgpPP5BenqKfyxg" target="_blank" class="text-gray-400 hover:text-white transition-colors" title="YouTube">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2025 Skhaba. All rights reserved. | Powered by Coderise Collective</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-white/95', 'backdrop-blur-sm');
+            } else {
+                nav.classList.remove('bg-white/95', 'backdrop-blur-sm');
+            }
+        });
+
+        // Animate stats counters when they come into view
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.stats-counter');
+                    counters.forEach(counter => {
+                        const target = parseInt(counter.textContent);
+                        const increment = target / 50;
+                        let current = 0;
+                        
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                counter.textContent = target + '+';
+                                clearInterval(timer);
+                            } else {
+                                counter.textContent = Math.floor(current) + '+';
+                            }
+                        }, 30);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe the stats section
+        const statsSection = document.querySelector('.py-20.bg-black');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98f6fad5b3b273de',t:'MTc2MDYxMTY2NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

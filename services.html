@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skhaba - Services</title>
+    <link rel="icon" type="image/jpeg" href="profile.jpeg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <img src="profile.jpeg" alt="Skhaba Logo" class="w-12 h-12 rounded-full object-cover">
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm transition-colors">Home</a>
+                        <a href="services.html" class="text-black font-semibold px-3 py-2 rounded-md text-sm">Services</a>
+                        <a href="portfolio.html" class="text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm transition-colors">Portfolio</a>
+                        <a href="about.html" class="text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm transition-colors">About Us</a>
+                        <a href="contact.html" class="text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm transition-colors">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-purple-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="text-gray-700 hover:text-black block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="services.html" class="text-black block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                <a href="portfolio.html" class="text-gray-700 hover:text-black block px-3 py-2 rounded-md text-base font-medium">Portfolio</a>
+                <a href="about.html" class="text-gray-700 hover:text-black block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                <a href="contact.html" class="text-gray-700 hover:text-black block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main>
+        <section id="services" class="hero-gradient min-h-screen flex items-center justify-center pt-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="fade-in">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                        Our Photography Services
+                    </h1>
+                    <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto">
+                        Professional photography services tailored to capture your most precious moments
+                    </p>
+                    <div class="space-x-4">
+                        <button class="bg-white text-black px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                        onclick="window.location.href='book.html'">
+                            Book a Session
+                        </button>
+                        <button class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-black transition-colors"
+                        onclick="window.location.href='portfolio.html'">
+                            View Portfolio
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Services Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Complete Photography Services</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">From intimate portraits to grand celebrations, we offer comprehensive photography services for every occasion</p>
+                </div>
+                
+                <!-- Wedding Photography -->
+                <div class="mb-20">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <div class="w-16 h-16 bg-black rounded-lg flex items-center justify-center mb-6">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Wedding Photography</h3>
+                            <p class="text-gray-600 mb-6">Your wedding day is one of the most important days of your life. Our wedding photography captures every precious moment, from the intimate getting-ready shots to the grand celebration. We blend photojournalistic and artistic styles to tell your unique love story.</p>
+                            <ul class="space-y-2 text-gray-600 mb-6">
+                                <li>• Pre-wedding consultation and venue scouting</li>
+                                <li>• Full-day coverage (8-12 hours)</li>
+                                <li>• Engagement session included</li>
+                                <li>• Professional editing and retouching</li>
+                                <li>• Online gallery for easy sharing</li>
+                                <li>• Print release for all images</li>
+                            </ul>
+                            <div class="text-2xl font-bold text-black mb-2">Starting at R600</div>
+                            <button class="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
+                            onclick="window.location.href='book.html'">Book Us</button>
+                        </div>
+                        <div class="h-96 rounded-lg overflow-hidden">
+    <img src="wedding.JPEG" alt="Wedding" class="w-full h-full object-cover">
+</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portrait Photography -->
+                <div class="mb-20">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+    <div class="bg-gray-100 h-96 rounded-lg overflow-hidden flex items-center justify-center lg:order-1">
+        <img src="brand.JPEG" alt="Brand" class="w-full h-full object-cover ">
+    </div>
+
+                       <div class="lg:order-2">
+                            <div class="w-16 h-16 bg-black rounded-lg flex items-center justify-center mb-6">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                </svg>
+                            </div>
+                        
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Portrait Photography</h3>
+                            <p class="text-gray-600 mb-6">Professional headshots and personal portraits that showcase your personality and style. Perfect for business professionals, actors, models, or anyone wanting beautiful portraits for personal use.</p>
+                            <ul class="space-y-2 text-gray-600 mb-6">
+                                <li>• Studio or outdoor location options</li>
+                                <li>• Multiple outfit changes</li>
+                                <li>• Professional lighting setup</li>
+                                <li>• Immediate preview on-site</li>
+                                <li>• High-resolution edited images</li>
+                                <li>• Same-day turnaround available</li>
+                            </ul>
+                            <div class="text-2xl font-bold text-black mb-2">Starting at R350</div>
+                            <button class="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
+                            onclick="window.location.href='book.html'">Book Session</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Family Photography -->
+                <div class="mb-20">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <div class="w-16 h-16 bg-black rounded-lg flex items-center justify-center mb-6">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Family Photography</h3>
+                            <p class="text-gray-600 mb-6">Capture the love and connection of your family with beautiful portraits that you'll treasure for generations. We specialize in making everyone feel comfortable and natural during the session.</p>
+                            <ul class="space-y-2 text-gray-600 mb-6">
+                                <li>• Indoor or outdoor sessions</li>
+                                <li>• Extended family groups welcome</li>
+                                <li>• Pet-friendly sessions</li>
+                                <li>• Seasonal and holiday themes</li>
+                                <li>• Professional editing included</li>
+                                <li>• Print packages available</li>
+                            </ul>
+                            <div class="text-2xl font-bold text-black mb-2">Starting at R450</div>
+                            <button class="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
+                            onclick="window.location.href='book.html'">Schedule Session</button>
+                        </div>
+                        <div class="h-96 rounded-lg overflow-hidden">
+    <img src="family.JPEG" alt="Wedding" class="w-full h-full object-cover">
+</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- Portrait Photography -->
+                <div class="mb-20">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+    <div class="bg-gray-100 h-96 rounded-lg overflow-hidden flex items-center justify-center lg:order-1">
+        <img src="grad.JPEG" alt="Brand" class="w-full h-full object-cover ">
+    </div>
+
+                       <div class="lg:order-2">
+                            <div class="w-16 h-16 bg-black rounded-lg flex items-center justify-center mb-6">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                </svg>
+                            </div>
+                        
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Graduation Ceremony</h3>
+                            <p class="text-gray-600 mb-6">Professional headshots and memorable portraits that showcase unforgatable mileage. Perfect for anyone wanting beautiful portraits that keeps on showing beautiful moments.</p>
+                            <ul class="space-y-2 text-gray-600 mb-6">
+                                <li>• On-campus or outdoor ceremony coverage</li>
+                                <li>• Individual or group potraits</li>
+                                <li>• Family and friends inluded</li>
+                                <li>• Immediate preview on-site</li>
+                                <li>• High-resolution edited images</li>
+                                <li>• Same-day turnaround available</li>
+                            </ul>
+                            <div class="text-2xl font-bold text-black mb-2">Starting at R350</div>
+                            <button class="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
+                            onclick="window.location.href='book.html'">Book Session</button>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Family Photography -->
+                <div class="mb-20">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <div class="w-16 h-16 bg-black rounded-lg flex items-center justify-center mb-6">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Podcasts and Music Videos</h3>
+                            <p class="text-gray-600 mb-6">Capture  high quality music videos together with podcasts that are highly attractive to local and international audience. We specialize in making everyone feel comfortable and natural during the session.</p>
+                            <ul class="space-y-2 text-gray-600 mb-6">
+                                <li>• Indoor or outdoor sessions</li>
+                                <li>• Fast turnaround and promotional cuts available</li>
+                                <li>• On-site playback and direction</li>
+                                <li>• Seasonal and holiday themes</li>
+                                <li>• Professional studio or on-location recording</li>
+                                <li>• Creative concept development and planning</li>
+                            </ul>
+                            <div class="text-2xl font-bold text-black mb-2">Starting at R450</div>
+                            <button class="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
+                            onclick="window.location.href='book.html'">Schedule Session</button>
+                        </div>
+                        <div class="h-96 rounded-lg overflow-hidden">
+    <img src="pod.JPEG" alt="Wedding" class="w-full h-full object-cover">
+</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Additional Services -->
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Additional Photography Services</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Specialized photography services for unique occasions and business needs</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        <div class="w-12 h-12 bg-black rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Corporate Events</h3>
+                        <p class="text-gray-600 mb-4">Professional coverage of conferences, meetings, team building events, and corporate celebrations.</p>
+                        <div class="text-lg font-bold text-black mb-2">Starting at R800</div>
+                        <button class="bg-black text-white px-4 py-2 rounded font-semibold hover:bg-gray-800 transition-colors"
+                        onclick="window.location.href='book.html'">Get Quote</button>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        <div class="w-12 h-12 bg-black rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Special Occasions</h3>
+                        <p class="text-gray-600 mb-4">Birthday parties, graduations, anniversaries, and other milestone celebrations captured beautifully.</p>
+                        <div class="text-lg font-bold text-black mb-2">Starting at R400</div>
+                        <button class="bg-black text-white px-4 py-2 rounded font-semibold hover:bg-gray-800 transition-colors"
+                        onclick="window.location.href='book.html'">Book Now</button>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        <div class="w-12 h-12 bg-black rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Product Photography</h3>
+                        <p class="text-gray-600 mb-4">High-quality product shots for e-commerce, catalogs, and marketing materials with professional lighting.</p>
+                        <div class="text-lg font-bold text-black mb-2">Starting at 200</div>
+                        <button class="bg-black text-white px-4 py-2 rounded font-semibold hover:bg-gray-800 transition-colors"
+                        onclick="window.location.href='book.html'">Book Now</button>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        <div class="w-12 h-12 bg-black rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M10.5 3L12 2l1.5 1H21v6H3V3h7.5z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Real Estate</h3>
+                        <p class="text-gray-600 mb-4">Professional property photography to showcase homes and commercial spaces at their best.</p>
+                        <div class="text-lg font-bold text-black mb-2">Starting at R300</div>
+                        <button class="bg-black text-white px-4 py-2 rounded font-semibold hover:bg-gray-800 transition-colors"
+                        onclick="window.location.href='book.html'">Book Now</button>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        <div class="w-12 h-12 bg-black rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Photo Editing</h3>
+                        <p class="text-gray-600 mb-4">Professional photo editing and retouching services for your existing photos and images.</p>
+                        <div class="text-lg font-bold text-black mb-2">Starting at R150</div>
+                        <button class="bg-black text-white px-4 py-2 rounded font-semibold hover:bg-gray-800 transition-colors"
+                        >UBook Now</button>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        <div class="w-12 h-12 bg-black rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Photography Workshops</h3>
+                        <p class="text-gray-600 mb-4">Learn photography techniques and skills through our hands-on workshops and private lessons.</p>
+                        <div class="text-lg font-bold text-black mb-2">Starting at R150</div>
+                        <button class="bg-black text-white px-4 py-2 rounded font-semibold hover:bg-gray-800 transition-colors"
+                        onclick="window.location.href='book.html'">Book Us</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Packages -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Photography Packages</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Choose the perfect package for your photography needs with transparent pricing</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Basic Package -->
+                    <div class="bg-white border-2 border-gray-200 rounded-lg p-8 hover:border-black transition-colors">
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Basic</h3>
+                            <div class="text-4xl font-bold text-black mb-2">R299</div>
+                            <p class="text-gray-600 mb-8">Perfect for small sessions</p>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                1-hour session
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                20 edited photos
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Online gallery
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Digital downloads
+                            </li>
+                        </ul>
+                        <button class="w-full bg-black text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
+                        onclick="window.location.href='book.html'">Choose Basic</button>
+                    </div>
+
+                    <!-- Premium Package -->
+                    <div class="bg-black text-white rounded-lg p-8 transform scale-105 relative">
+                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-white text-black px-4 py-1 rounded-full text-sm font-semibold">
+                            Most Popular
+                        </div>
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold mb-4">Premium</h3>
+                            <div class="text-4xl font-bold mb-2">R599</div>
+                            <p class="text-gray-300 mb-8">Great for special events</p>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                3-hour session
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                50 edited photos
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Premium online gallery
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Print release included
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Multiple locations
+                            </li>
+                        </ul>
+                        <button class="w-full bg-white text-black py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                        onclick="window.location.href='book.html'">Choose Premium</button>
+                    </div>
+
+                    <!-- Luxury Package -->
+                    <div class="bg-white border-2 border-gray-200 rounded-lg p-8 hover:border-black transition-colors">
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Luxury</h3>
+                            <div class="text-4xl font-bold text-black mb-2">R999</div>
+                            <p class="text-gray-600 mb-8">Complete coverage</p>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Full day coverage
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                100+ edited photos
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Custom photo album
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Second photographer
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Unlimited locations
+                            </li>
+                        </ul>
+                        <button class="w-full bg-black text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
+                        onclick="window.location.href='book.html'">Choose Luxury</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">What Our Clients Say</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Real feedback from couples, families, and businesses who trusted us with their precious moments</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-8 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-yellow-400">
+                                ★★★★★
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-6">"Skhaba Gallery captured my graduation ceremony perfectly! Every emotion, every detail - the photos are absolutely stunning and I'll treasure them forever."</p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-gray-600 font-semibold">FM</span>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-800">Fanah Makhanya</div>
+                                <div class="text-gray-600 text-sm">Clients</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-yellow-400">
+                                ★★★★★
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-6">"We're blown by this amazing shot. Big shout out to Skhaba Gllery for bringing our vision to life through their lens."</p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-gray-600 font-semibold">SC</span>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-800">Sleak & Co Clothing</div>
+                                <div class="text-gray-600 text-sm">Clothing Brand</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-yellow-400">
+                                ★★★★★
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-6">"Professional, creative, and delivered exactly what I needed . The photos exceeded my expectations!"</p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-gray-600 font-semibold">DM</span>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-800">DJ Melzi</div>
+                                <div class="text-gray-600 text-sm">Music Artist</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-black">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Capture Your Moments?</h2>
+                <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                    Let's create beautiful memories together. Book your photography session today!
+                </p>
+                <button class="bg-white text-black px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                 onclick="window.location.href='contact.html'">
+                    Contact Us Today
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Skhaba Gallery</h3>
+                    <p class="text-gray-400">Capturing life's precious moments through the art of photography.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="portfolio.html" class="text-gray-400 hover:text-white transition-colors">Portfolio</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Photography Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Weddings</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Portraits</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Events</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Family Photos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <p class="text-gray-400 mb-2">📧 skhabagallery09@gmail.com</p>
+                    <p class="text-gray-400 mb-2">📞 +27 (63) 605-6900</p>
+                    <p class="text-gray-400 mb-4">📍 No Physical Offices, Based Remotely</p>
+                    <div class="flex space-x-4">
+                        <a href="https://wa.me/27636056900" target="_blank" class="text-gray-400 hover:text-white transition-colors" title="WhatsApp">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/share/1Bfcm8YqCq/?mibextid=wwXIfr" target="_blank" class="text-gray-400 hover:text-white transition-colors" title="Facebook">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.tiktok.com/@skhaba_art_gallery?_t=ZS-90bG0aRPVwb&_r=1" target="_blank" class="text-gray-400 hover:text-white transition-colors" title="TikTok">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/skhaba_art_gallery?igsh=cnV1dmlnMG5xZGQx" target="_blank" class="text-gray-400 hover:text-white transition-colors" title="Instagram">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C8.396 0 7.989.013 7.041.048 6.094.082 5.52.204 5.036.388a3.9 3.9 0 0 0-1.414.923A3.9 3.9 0 0 0 2.7 2.725c-.183.484-.306 1.058-.34 2.005C2.326 5.678 2.313 6.085 2.313 9.706v4.588c0 3.621.013 4.028.048 4.976.034.947.157 1.521.34 2.005a3.9 3.9 0 0 0 .923 1.414 3.9 3.9 0 0 0 1.414.923c.484.183 1.058.306 2.005.34.948.035 1.355.048 4.976.048h4.588c3.621 0 4.028-.013 4.976-.048.947-.034 1.521-.157 2.005-.34a3.9 3.9 0 0 0 1.414-.923 3.9 3.9 0 0 0 .923-1.414c.183-.484.306-1.058.34-2.005.035-.948.048-1.355.048-4.976V9.706c0-3.621-.013-4.028-.048-4.976-.034-.947-.157-1.521-.34-2.005a3.9 3.9 0 0 0-.923-1.414A3.9 3.9 0 0 0 19.229.388c-.484-.183-1.058-.306-2.005-.34C16.276.013 15.869 0 12.248 0h-.23zm-.117 5.4a6.6 6.6 0 1 1 0 13.2 6.6 6.6 0 0 1 0-13.2zm8.4-2.205a1.54 1.54 0 1 1-3.08 0 1.54 1.54 0 0 1 3.08 0zM12 7.25a4.75 4.75 0 1 0 0 9.5 4.75 4.75 0 0 0 0-9.5z"/>
+                            </svg>
+                        </a>
+                        <a href="https://youtube.com/@skhabagallery09?si=nxgpPP5BenqKfyxg" target="_blank" class="text-gray-400 hover:text-white transition-colors" title="YouTube">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2025 Skhaba. All rights reserved. | Powered by Coderise Collective</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-white/95', 'backdrop-blur-sm');
+            } else {
+                nav.classList.remove('bg-white/95', 'backdrop-blur-sm');
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98f6e82134a273de',t:'MTc2MDYxMDg5OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

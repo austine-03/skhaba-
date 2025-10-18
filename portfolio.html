@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpeg" href="profile.jpeg">
+    <title>Skhaba - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .modal-content {
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .modal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        .modal-item {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .video-container:hover .video-overlay {
+            opacity: 1;
+        }
+        .play-button {
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .play-button:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <img src="profile.jpeg" alt="Skhaba Logo" class="w-12 h-12 rounded-full object-cover">
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm transition-colors">Home</a>
+                        <a href="services.html" class="text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm transition-colors">Services</a>
+                        <a href="portfolio.html" class="text-black font-semibold px-3 py-2 rounded-md text-sm">Portfolio</a>
+                        <a href="about.html" class="text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm transition-colors">About Us</a>
+                        <a href="contact.html" class="text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm transition-colors">Contact</a>
+                       
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-purple-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="text-gray-700 hover:text-black block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="services.html" class="text-gray-700 hover:text-black block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                <a href="portfolio.html" class="text-black block px-3 py-2 rounded-md text-base font-medium">Portfolio</a>
+                <a href="about.html" class="text-gray-700 hover:text-black block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                <a href="contact.html" class="text-gray-700 hover:text-black block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main>
+        <section id="portfolio" class="hero-gradient min-h-screen flex items-center justify-center pt-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="fade-in">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                        Our Portfolio
+                    </h1>
+                    <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto">
+                        Explore our diverse collection of photography and videography work showcasing real projects and collaborations
+                    </p>
+                    <div class="space-x-4">
+                        <button onclick="document.querySelector('.portfolio-galleries').scrollIntoView({behavior: 'smooth'})" class="bg-white text-black px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            View Our Work
+                        </button>
+                       
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Galleries -->
+        <div class="portfolio-galleries">
+            <!-- DJ Melzi Photoshoot -->
+            <section class="py-20 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">DJ Melzi Photoshoot</h2>
+                        <p class="text-lg text-gray-600">Professional musician photography capturing the essence of DJ Melzi's artistry and stage presence, we captured the energy, rythm, and personality of talented DJ through a dynamic photo session that blends music and motion. The shoot focused on theauthentic moments.</p>
+                    </div>
+
+                    <div class="gallery-container bg-gray-100 rounded-lg overflow-hidden shadow-lg max-w-5xl mx-auto">
+                        <div class="relative">
+                            <!-- Photo Display Area -->
+                            <div id="melziGallery" class="gallery-display h-96 md:h-[450px] lg:h-[600px] bg-gradient-to-br from-pink-100 to-purple-100 flex items-center justify-center relative">
+                                <img src="melzi1.jpeg" alt="DJ Melzi Studio Portrait" class="melzi-photo active max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                                <img src="melzi2.jpeg" alt="DJ Melzi Performance Shot" class="melzi-photo hidden max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                                <img src="melzi3.jpeg" alt="DJ Melzi Behind the Decks" class="melzi-photo hidden max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                                <img src="melzi4.jpeg" alt="DJ Melzi Artistic Portrait" class="melzi-photo hidden max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                                <img src="melzi5.jpeg" alt="DJ Melzi Creative Angle" class="melzi-photo hidden max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                            </div>
+                        </div>
+                        
+                        <!-- Photo Navigation Dots -->
+                        <div class="flex justify-center space-x-2 p-4 bg-white">
+                            <button onclick="showPhoto('melzi', 0)" class="melzi-dot w-3 h-3 rounded-full bg-pink-500 transition-all"></button>
+                            <button onclick="showPhoto('melzi', 1)" class="melzi-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-pink-300 transition-all"></button>
+                            <button onclick="showPhoto('melzi', 2)" class="melzi-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-pink-300 transition-all"></button>
+                            <button onclick="showPhoto('melzi', 3)" class="melzi-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-pink-300 transition-all"></button>
+                            <button onclick="showPhoto('melzi', 4)" class="melzi-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-pink-300 transition-all"></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sleak & Co Clothing Brand -->
+            <section class="py-20 bg-gray-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Sleak & Co Clothing Brand</h2>
+                        <p class="text-lg text-gray-600">Fashion photography showcasing the latest collection from Sleak & Co with modern styling and creative concepts. We collaborated with Sleak & Co to create a bold visual story that reflects the brand's modern style and confindent attitude. The photoshoot focused on clean lines, expressive poses, and vibrant  textures</p>
+                    </div>
+
+                    <div class="gallery-container bg-white rounded-lg overflow-hidden shadow-lg max-w-5xl mx-auto">
+                        <div class="relative">
+                            <!-- Photo Display Area -->
+                            <div id="sleakGallery" class="gallery-display h-96 md:h-[450px] lg:h-[600px] bg-gradient-to-br from-blue-100 to-indigo-100 flex items-center justify-center relative">
+                                <img src="sli1.jpeg" alt="Sleak & Co Collection Shot 1" class="sleak-photo active max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                                <img src="sli2.jpeg" alt="Sleak & Co Collection Shot 2" class="sleak-photo hidden max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                                <img src="sli3.jpeg" alt="Sleak & Co Collection Shot 3" class="sleak-photo hidden max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                                <img src="sli4.jpeg" alt="Sleak & Co Collection Shot 4" class="sleak-photo hidden max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                                <img src="sli.jpeg" alt="Sleak & Co Collection Shot 5" class="sleak-photo hidden max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                            </div>
+                        </div>
+                        
+                        <!-- Photo Navigation Dots -->
+                        <div class="flex justify-center space-x-2 p-4 bg-gray-50">
+                            <button onclick="showPhoto('sleak', 0)" class="sleak-dot w-3 h-3 rounded-full bg-blue-500 transition-all"></button>
+                            <button onclick="showPhoto('sleak', 1)" class="sleak-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-blue-300 transition-all"></button>
+                            <button onclick="showPhoto('sleak', 2)" class="sleak-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-blue-300 transition-all"></button>
+                            <button onclick="showPhoto('sleak', 3)" class="sleak-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-blue-300 transition-all"></button>
+                            <button onclick="showPhoto('sleak', 4)" class="sleak-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-blue-300 transition-all"></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Luhhofrm37 Music Video -->
+            <section class="py-20 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Luhhofrm37 Music Video</h2>
+                        <p class="text-lg text-gray-600">Professional music video production featuring dynamic cinematography and creative storytelling. We captured a visually string music video for Luh Hommie Cyrixs, bringing his sound and energy to lufe through cinematic visuals and dynamic storytelling</p>
+                    </div>
+
+                    <div class="gallery-container bg-gray-100 rounded-lg overflow-hidden shadow-lg max-w-5xl mx-auto">
+                        <div class="relative">
+                            <!-- Video Display Area -->
+                            <div id="luhhoGallery" class="gallery-display h-96 md:h-[450px] lg:h-[600px] bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center relative video-container">
+                                <video class="luhho-video active max-w-full max-h-full object-contain" controls poster="luhho.jpeg" onerror="this.style.display='none';">
+                                    <source src="luhho.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="video-overlay">
+                                    <div class="play-button">
+                                        <svg class="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M8 5v14l11-7z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Single dot for video -->
+                        <div class="flex justify-center space-x-2 p-4 bg-white">
+                            <button class="w-3 h-3 rounded-full bg-purple-500 transition-all"></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Graduation Ceremonies -->
+            <section class="py-20 bg-gray-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Graduation Ceremonies</h2>
+                        <p class="text-lg text-gray-600">Capturing milestone moments at various graduation ceremonies with professional event photography. We captured the unforgettable moments of students celebrating their academic milestones with pride and joy. Our graduation shoots focus on ghenuine emotions, elegance, and attention to detail</p>
+                    </div>
+
+                    <div class="gallery-container bg-white rounded-lg overflow-hidden shadow-lg max-w-5xl mx-auto">
+                        <div class="relative">
+                            <!-- Photo Display Area -->
+                            <div id="graduationGallery" class="gallery-display h-96 md:h-[450px] lg:h-[600px] bg-gradient-to-br from-green-100 to-emerald-100 flex items-center justify-center relative">
+                                <img src="grad1.jpeg" alt="Graduation Ceremony 2023" class="graduation-photo active max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                                <img src="grad2.jpeg" alt="Graduation Ceremony 2024 Spring" class="graduation-photo hidden max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                                <img src="grad3.jpeg" alt="Graduation Ceremony 2024 Summer" class="graduation-photo hidden max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                                <img src="grad4.jpeg" alt="Graduation Ceremony 2024 Fall" class="graduation-photo hidden max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                                <img src="grad5.jpeg" alt="Special Graduation Event" class="graduation-photo hidden max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                            </div>
+                        </div>
+                        
+                        <!-- Photo Navigation Dots -->
+                        <div class="flex justify-center space-x-2 p-4 bg-gray-50">
+                            <button onclick="showPhoto('graduation', 0)" class="graduation-dot w-3 h-3 rounded-full bg-green-500 transition-all"></button>
+                            <button onclick="showPhoto('graduation', 1)" class="graduation-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-green-300 transition-all"></button>
+                            <button onclick="showPhoto('graduation', 2)" class="graduation-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-green-300 transition-all"></button>
+                            <button onclick="showPhoto('graduation', 3)" class="graduation-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-green-300 transition-all"></button>
+                            <button onclick="showPhoto('graduation', 4)" class="graduation-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-green-300 transition-all"></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BMX Documentation Video -->
+            <section class="py-20 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">BMX Documentation</h2>
+                        <p class="text-lg text-gray-600">Action-packed BMX documentary capturing the thrill and skill of extreme sports with dynamic camera work. We produced an inspiring and action-packed documentary capturing the raw energy and culture of the BMX community. Through powerful visuals, close-up motion shots, and authentic storytelling, we highlighted the passion, skills, and dedication of local riders pushing their limits</p>
+                    </div>
+
+                    <div class="gallery-container bg-gray-100 rounded-lg overflow-hidden shadow-lg max-w-5xl mx-auto">
+                        <div class="relative">
+                            <!-- Video Display Area -->
+                            <div id="bmxGallery" class="gallery-display h-96 md:h-[450px] lg:h-[600px] bg-gradient-to-br from-orange-100 to-red-100 flex items-center justify-center relative video-container">
+                                <video class="bmx-video active max-w-full max-h-full object-contain" controls poster="bmx.jpeg" onerror="this.style.display='none';">
+                                    <source src="bmx.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="video-overlay">
+                                    <div class="play-button">
+                                        <svg class="w-6 h-6 text-orange-600" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M8 5v14l11-7z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Single dot for video -->
+                        <div class="flex justify-center space-x-2 p-4 bg-white">
+                            <button class="w-3 h-3 rounded-full bg-orange-500 transition-all"></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Girl Skating Video -->
+            <section class="py-20 bg-gray-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Skate-Inspired Model Photoshoot</h2>
+                        <p class="text-lg text-gray-600">Empowering skateboarding video showcasing female talent and breaking stereotypes in extreme sports. We captured a bold fusion of fashion and street culture in this dynamic shoot featuring a model in motion on a skateboard. The session combined fluid movement, urban textures, and sleek styling to create visuals that feel both effortless and powerful</p>
+                    </div>
+
+                    <div class="gallery-container bg-white rounded-lg overflow-hidden shadow-lg max-w-5xl mx-auto">
+                        <div class="relative">
+                            <!-- Video Display Area -->
+                            <div id="girlSkatingGallery" class="gallery-display h-96 md:h-[450px] lg:h-[600px] bg-gradient-to-br from-pink-100 to-purple-100 flex items-center justify-center relative video-container">
+                                <video class="girlSkating-video active max-w-full max-h-full object-contain" controls poster="gskate.jpeg" onerror="this.style.display='none';">
+                                    <source src="gskate.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="video-overlay">
+                                    <div class="play-button">
+                                        <svg class="w-6 h-6 text-pink-600" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M8 5v14l11-7z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Single dot for video -->
+                        <div class="flex justify-center space-x-2 p-4 bg-gray-50">
+                            <button class="w-3 h-3 rounded-full bg-pink-500 transition-all"></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Guys Skating Photoshoot -->
+            <section class="py-20 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Urban Skater Photoshoot</h2>
+                        <p class="text-lg text-gray-600">High-energy skateboarding photography capturing tricks, style, and the urban skating culture. We documented the raw energy and flow of a skater in his element, blending motion, style, and street culture into every frame. The shoot captures the rhythm of city life</p>
+                    </div>
+
+                    <div class="gallery-container bg-gray-100 rounded-lg overflow-hidden shadow-lg max-w-5xl mx-auto">
+                        <div class="relative">
+                            <!-- Photo Display Area -->
+                            <div id="guysSkatingGallery" class="gallery-display h-96 md:h-[450px] lg:h-[600px] bg-gradient-to-br from-blue-100 to-cyan-100 flex items-center justify-center relative">
+                                <img src="skate1.jpeg" alt="Skating Action Shot 1" class="guysSkating-photo active max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                                <img src="skate2.jpeg" alt="Skating Action Shot 2" class="guysSkating-photo hidden max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                                <img src="skate3.jpeg" alt="Skating Action Shot 3" class="guysSkating-photo hidden max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                                <img src="skate4.jpeg" alt="Skating Action Shot 4" class="guysSkating-photo hidden max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                                <img src="skate5.jpeg" alt="Skating Action Shot 5" class="guysSkating-photo hidden max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                            </div>
+                        </div>
+                        
+                        <!-- Photo Navigation Dots -->
+                        <div class="flex justify-center space-x-2 p-4 bg-white">
+                            <button onclick="showPhoto('guysSkating', 0)" class="guysSkating-dot w-3 h-3 rounded-full bg-blue-500 transition-all"></button>
+                            <button onclick="showPhoto('guysSkating', 1)" class="guysSkating-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-blue-300 transition-all"></button>
+                            <button onclick="showPhoto('guysSkating', 2)" class="guysSkating-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-blue-300 transition-all"></button>
+                            <button onclick="showPhoto('guysSkating', 3)" class="guysSkating-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-blue-300 transition-all"></button>
+                            <button onclick="showPhoto('guysSkating', 4)" class="guysSkating-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-blue-300 transition-all"></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Carol Monroe Model Photoshoot -->
+            <section class="py-20 bg-gray-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Catol Monroe – Beauty Portrait Session</h2>
+                        <p class="text-lg text-gray-600">Professional fashion and portrait photography featuring model Carol Monroe with elegant styling and creative concepts. We captured the radiant elegance of Catol Monroe, showcasing her natural beauty, confidence, and grace through refined portrait photography. The shoot focused on clean composition, soft lighting, and expressive poses that highlight her timeless charm</p>
+                    </div>
+
+                    <div class="gallery-container bg-white rounded-lg overflow-hidden shadow-lg max-w-5xl mx-auto">
+                        <div class="relative">
+                            <!-- Photo Display Area -->
+                            <div id="carolGallery" class="gallery-display h-96 md:h-[450px] lg:h-[600px] bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center relative">
+                                <img src="car1.jpeg" alt="Carol Monroe Portrait 1" class="carol-photo active max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                                <img src="car2.jpeg" alt="Carol Monroe Portrait 2" class="carol-photo hidden max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                                <img src="car3.jpeg" alt="Carol Monroe Portrait 3" class="carol-photo hidden max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                                <img src="car4.jpeg" alt="Carol Monroe Portrait 4" class="carol-photo hidden max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                                <img src="car5.jpeg" alt="Carol Monroe Portrait 5" class="carol-photo hidden max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                            </div>
+                        </div>
+                        
+                        <!-- Photo Navigation Dots -->
+                        <div class="flex justify-center space-x-2 p-4 bg-gray-50">
+                            <button onclick="showPhoto('carol', 0)" class="carol-dot w-3 h-3 rounded-full bg-purple-500 transition-all"></button>
+                            <button onclick="showPhoto('carol', 1)" class="carol-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-purple-300 transition-all"></button>
+                            <button onclick="showPhoto('carol', 2)" class="carol-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-purple-300 transition-all"></button>
+                            <button onclick="showPhoto('carol', 3)" class="carol-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-purple-300 transition-all"></button>
+                            <button onclick="showPhoto('carol', 4)" class="carol-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-purple-300 transition-all"></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Uncle Tyler & Wolf Creator Video -->
+            <section class="py-20 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Uncle Tyler & Wolf Creator - Kasi Flavour</h2>
+                        <p class="text-lg text-gray-600">We brought the streets to life with Unvle Tyler and Wolf Creator, capturing the real kasi energy through raw visuals, bold attitude, and effortless style. The shoot blended urban backdrops, creative direction, and natural movement to showcase the rhythm and flavour of township culture</p>
+                    </div>
+
+                    <div class="gallery-container bg-gray-100 rounded-lg overflow-hidden shadow-lg max-w-5xl mx-auto">
+                        <div class="relative">
+                            <!-- Video Display Area -->
+                            <div id="kkasiGallery" class="gallery-display h-96 md:h-[450px] lg:h-[600px] bg-gradient-to-br from-yellow-100 to-orange-100 flex items-center justify-center relative video-container">
+                                <video class="kkasi-video active max-w-full max-h-full object-contain" controls poster="kasi.jpeg" onerror="this.style.display='none';">
+                                    <source src="kasi.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="video-overlay">
+                                    <div class="play-button">
+                                        <svg class="w-6 h-6 text-yellow-600" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M8 5v14l11-7z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Single dot for video -->
+                        <div class="flex justify-center space-x-2 p-4 bg-white">
+                            <button class="w-3 h-3 rounded-full bg-yellow-500 transition-all"></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bravo Store & Drip is Forever -->
+            <section class="py-20 bg-gray-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Bravo Store - The Drip is Forever</h2>
+                        <p class="text-lg text-gray-600">Fashion brand photography for Bravo Store showcasing their "The Drip is Forever" collection with urban style. We captured the essence of Bravo Store’s urban fashion with a dynamic photoshoot that showcases style, confidence, and individuality. The session highlighted bold outfits, sharp details, and effortless attitude</p>
+                    </div>
+
+                    <div class="gallery-container bg-white rounded-lg overflow-hidden shadow-lg max-w-5xl mx-auto">
+                        <div class="relative">
+                            <!-- Photo Display Area -->
+                            <div id="bravoGallery" class="gallery-display h-96 md:h-[450px] lg:h-[600px] bg-gradient-to-br from-indigo-100 to-purple-100 flex items-center justify-center relative">
+                                <img src="bra1.jpeg" alt="Bravo Store Collection 1" class="bravo-photo active max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                                <img src="bra2.jpeg" alt="Bravo Store Collection 2" class="bravo-photo hidden max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                                <img src="bra3.jpeg" alt="Bravo Store Collection 3" class="bravo-photo hidden max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                                <img src="bra4.jpeg" alt="Bravo Store Collection 4" class="bravo-photo hidden max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                                <img src="bra5.jpeg" alt="Bravo Store Collection 5" class="bravo-photo hidden max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                            </div>
+                        </div>
+                        
+                        <!-- Photo Navigation Dots -->
+                        <div class="flex justify-center space-x-2 p-4 bg-gray-50">
+                            <button onclick="showPhoto('bravo', 0)" class="bravo-dot w-3 h-3 rounded-full bg-indigo-500 transition-all"></button>
+                            <button onclick="showPhoto('bravo', 1)" class="bravo-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-indigo-300 transition-all"></button>
+                            <button onclick="showPhoto('bravo', 2)" class="bravo-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-indigo-300 transition-all"></button>
+                            <button onclick="showPhoto('bravo', 3)" class="bravo-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-indigo-300 transition-all"></button>
+                            <button onclick="showPhoto('bravo', 4)" class="bravo-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-indigo-300 transition-all"></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Spyee Somlibo Model Photoshoot -->
+            <section class="py-20 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Boitumelo Patricia & Spyee Somlibo Model Photoshoot</h2>
+                        <p class="text-lg text-gray-600">Professional model photography featuring Boitumelo Patricia & Spyee Somlibo with contemporary styling and artistic direction. We captured the striking presence and personality of Spyee Somlibo in a dynamic model session that blends style, attitude, and expression. The shoot focused on sleek composition, bold poses</p>
+                    </div>
+
+                    <div class="gallery-container bg-gray-100 rounded-lg overflow-hidden shadow-lg max-w-5xl mx-auto">
+                        <div class="relative">
+                            <!-- Photo Display Area -->
+                            <div id="spyeeGallery" class="gallery-display h-96 md:h-[450px] lg:h-[600px] bg-gradient-to-br from-teal-100 to-cyan-100 flex items-center justify-center relative">
+                                <img src="sp1.jpeg" alt="Spyee Somlibo Portrait 1" class="spyee-photo active max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                                <img src="sp2.jpeg" alt="Spyee Somlibo Portrait 2" class="spyee-photo hidden max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                                <img src="sp3.jpeg" alt="Spyee Somlibo Portrait 3" class="spyee-photo hidden max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                                <img src="sp4.jpeg" alt="Spyee Somlibo Portrait 4" class="spyee-photo hidden max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                                <img src="sp5.jpeg" alt="Spyee Somlibo Portrait 5" class="spyee-photo hidden max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                            </div>
+                        </div>
+                        
+                        <!-- Photo Navigation Dots -->
+                        <div class="flex justify-center space-x-2 p-4 bg-white">
+                            <button onclick="showPhoto('spyee', 0)" class="spyee-dot w-3 h-3 rounded-full bg-teal-500 transition-all"></button>
+                            <button onclick="showPhoto('spyee', 1)" class="spyee-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-teal-300 transition-all"></button>
+                            <button onclick="showPhoto('spyee', 2)" class="spyee-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-teal-300 transition-all"></button>
+                            <button onclick="showPhoto('spyee', 3)" class="spyee-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-teal-300 transition-all"></button>
+                            <button onclick="showPhoto('spyee', 4)" class="spyee-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-teal-300 transition-all"></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SABC Women in Science Documentation -->
+            <section class="py-20 bg-gray-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">SABC Women in Science - Behind the Scenes</h2>
+                        <p class="text-lg text-gray-600">Documentary photography capturing behind-the-scenes moments of SABC's "Women in Science" program featuring guest presenter Vukosi from the Department of Science, Technology & Innovation. We documented the making of SABC’s Women in Science series, capturing the dedication, creativity, and energy that goes into producing meaningful content. From setup to on-camera moments, the behind-the-scenes footage highlights the teamwork, attention to detail, and passion driving the project</p>
+                    </div>
+
+                    <div class="gallery-container bg-white rounded-lg overflow-hidden shadow-lg max-w-5xl mx-auto">
+                        <div class="relative">
+                            <!-- Photo Display Area -->
+                            <div id="sabcGallery" class="gallery-display h-96 md:h-[450px] lg:h-[600px] bg-gradient-to-br from-emerald-100 to-green-100 flex items-center justify-center relative">
+                                <img src="sa1.jpeg" alt="SABC Women in Science BTS 1" class="sabc-photo active max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                                <img src="sa2.jpeg" alt="SABC Women in Science BTS 2" class="sabc-photo hidden max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                                <img src="sa3.jpeg" alt="SABC Women in Science BTS 3" class="sabc-photo hidden max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                                <img src="sa4.jpeg" alt="SABC Women in Science BTS 4" class="sabc-photo hidden max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                                <img src="sa5.jpeg" alt="SABC Women in Science BTS 5" class="sabc-photo hidden max-w-full max-h-full object-contain" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                            </div>
+                        </div>
+                        
+                        <!-- Photo Navigation Dots -->
+                        <div class="flex justify-center space-x-2 p-4 bg-gray-50">
+                            <button onclick="showPhoto('sabc', 0)" class="sabc-dot w-3 h-3 rounded-full bg-emerald-500 transition-all"></button>
+                            <button onclick="showPhoto('sabc', 1)" class="sabc-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-emerald-300 transition-all"></button>
+                            <button onclick="showPhoto('sabc', 2)" class="sabc-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-emerald-300 transition-all"></button>
+                            <button onclick="showPhoto('sabc', 3)" class="sabc-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-emerald-300 transition-all"></button>
+                            <button onclick="showPhoto('sabc', 4)" class="sabc-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-emerald-300 transition-all"></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Skhaba Gallery</h3>
+                    <p class="text-gray-400">Capturing life's precious moments through the art of photography.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="portfolio.html" class="text-gray-400 hover:text-white transition-colors">Portfolio</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Photography Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Weddings</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Portraits</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Events</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Family Photos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <p class="text-gray-400 mb-2">📧 skhabagallery09@gmai.com</p>
+                    <p class="text-gray-400 mb-2">📞 +27 (63) 605-6900</p>
+                    <p class="text-gray-400 mb-4">📍 No Physical Offices, Based Remotely</p>
+                    <div class="flex space-x-4">
+                        <a href="https://wa.me/27636056900" target="_blank" class="text-gray-400 hover:text-white transition-colors" title="WhatsApp">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/share/1Bfcm8YqCq/?mibextid=wwXIfr" target="_blank" class="text-gray-400 hover:text-white transition-colors" title="Facebook">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.tiktok.com/@skhaba_art_gallery?_t=ZS-90bG0aRPVwb&_r=1" target="_blank" class="text-gray-400 hover:text-white transition-colors" title="TikTok">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/skhaba_art_gallery?igsh=cnV1dmlnMG5xZGQx" target="_blank" class="text-gray-400 hover:text-white transition-colors" title="Instagram">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C8.396 0 7.989.013 7.041.048 6.094.082 5.52.204 5.036.388a3.9 3.9 0 0 0-1.414.923A3.9 3.9 0 0 0 2.7 2.725c-.183.484-.306 1.058-.34 2.005C2.326 5.678 2.313 6.085 2.313 9.706v4.588c0 3.621.013 4.028.048 4.976.034.947.157 1.521.34 2.005a3.9 3.9 0 0 0 .923 1.414 3.9 3.9 0 0 0 1.414.923c.484.183 1.058.306 2.005.34.948.035 1.355.048 4.976.048h4.588c3.621 0 4.028-.013 4.976-.048.947-.034 1.521-.157 2.005-.34a3.9 3.9 0 0 0 1.414-.923 3.9 3.9 0 0 0 .923-1.414c.183-.484.306-1.058.34-2.005.035-.948.048-1.355.048-4.976V9.706c0-3.621-.013-4.028-.048-4.976-.034-.947-.157-1.521-.34-2.005a3.9 3.9 0 0 0-.923-1.414A3.9 3.9 0 0 0 19.229.388c-.484-.183-1.058-.306-2.005-.34C16.276.013 15.869 0 12.248 0h-.23zm-.117 5.4a6.6 6.6 0 1 1 0 13.2 6.6 6.6 0 0 1 0-13.2zm8.4-2.205a1.54 1.54 0 1 1-3.08 0 1.54 1.54 0 0 1 3.08 0zM12 7.25a4.75 4.75 0 1 0 0 9.5 4.75 4.75 0 0 0 0-9.5z"/>
+                            </svg>
+                        </a>
+                        <a href="https://youtube.com/@skhabagallery09?si=nxgpPP5BenqKfyxg" target="_blank" class="text-gray-400 hover:text-white transition-colors" title="YouTube">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2025 Skhaba. All rights reserved. | Powered by Coderise Collective</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Gallery Navigation Functions
+        let currentIndices = {
+            melzi: 0,
+            sleak: 0,
+            luhho: 0,
+            graduation: 0,
+            bmx: 0,
+            girlSkating: 0,
+            guysSkating: 0,
+            carol: 0,
+            kkasi: 0,
+            bravo: 0,
+            spyee: 0,
+            sabc: 0
+        };
+
+        function showPhoto(galleryType, index) {
+            // Hide all photos in the gallery
+            const photos = document.querySelectorAll(`.${galleryType}-photo`);
+            const dots = document.querySelectorAll(`.${galleryType}-dot`);
+            
+            photos.forEach(photo => photo.classList.add('hidden'));
+            photos.forEach(photo => photo.classList.remove('active'));
+            
+            // Reset all dots
+            dots.forEach(dot => {
+                dot.classList.remove('bg-pink-500', 'bg-blue-500', 'bg-purple-500', 'bg-green-500', 'bg-orange-500', 'bg-indigo-500', 'bg-teal-500', 'bg-emerald-500', 'bg-yellow-500');
+                dot.classList.add('bg-gray-300');
+            });
+            
+            // Show selected photo
+            if (photos[index]) {
+                photos[index].classList.remove('hidden');
+                photos[index].classList.add('active');
+            }
+            
+            // Highlight selected dot with appropriate color
+            if (dots[index]) {
+                dots[index].classList.remove('bg-gray-300');
+                switch(galleryType) {
+                    case 'melzi':
+                        dots[index].classList.add('bg-pink-500');
+                        break;
+                    case 'sleak':
+                        dots[index].classList.add('bg-blue-500');
+                        break;
+                    case 'graduation':
+                        dots[index].classList.add('bg-green-500');
+                        break;
+                    case 'guysSkating':
+                        dots[index].classList.add('bg-blue-500');
+                        break;
+                    case 'carol':
+                        dots[index].classList.add('bg-purple-500');
+                        break;
+                    case 'bravo':
+                        dots[index].classList.add('bg-indigo-500');
+                        break;
+                    case 'spyee':
+                        dots[index].classList.add('bg-teal-500');
+                        break;
+                    case 'sabc':
+                        dots[index].classList.add('bg-emerald-500');
+                        break;
+                }
+            }
+            
+            // Update current index
+            currentIndices[galleryType] = index;
+        }
+
+        function nextPhoto(galleryType) {
+            const photos = document.querySelectorAll(`.${galleryType}-photo`);
+            const currentIndex = currentIndices[galleryType];
+            const nextIndex = (currentIndex + 1) % photos.length;
+            showPhoto(galleryType, nextIndex);
+        }
+
+        function previousPhoto(galleryType) {
+            const photos = document.querySelectorAll(`.${galleryType}-photo`);
+            const currentIndex = currentIndices[galleryType];
+            const prevIndex = currentIndex === 0 ? photos.length - 1 : currentIndex - 1;
+            showPhoto(galleryType, prevIndex);
+        }
+
+        // Auto-advance galleries every 5 seconds (only for photo galleries, not videos)
+        function startAutoAdvance() {
+            setInterval(() => {
+                const photoGalleries = ['melzi', 'sleak', 'graduation', 'guysSkating', 'carol', 'bravo', 'spyee', 'sabc'];
+                photoGalleries.forEach(galleryType => {
+                    // Only auto-advance if the gallery is visible on screen
+                    const gallery = document.getElementById(`${galleryType}Gallery`);
+                    if (gallery && isElementInViewport(gallery)) {
+                        nextPhoto(galleryType);
+                    }
+                });
+            }, 5000);
+        }
+
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        // Start auto-advance when page loads
+        startAutoAdvance();
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'990255f3836f73b4',t:'MTc2MDczMDc0MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpeg" href="profile.jpeg">
+    <title>Skhaba - Book Your Session</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .form-input {
+            transition: all 0.3s ease;
+        }
+        .form-input:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .success-message {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+        .pricing-card {
+            transition: all 0.3s ease;
+        }
+        .pricing-card:hover {
+            transform: translateY(-5px);
+        }
+        .step-indicator {
+            transition: all 0.3s ease;
+        }
+        .step-active {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <img src="profile.jpeg" alt="Skhaba Logo" class="w-12 h-12 rounded-full object-cover">
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm transition-colors">Home</a>
+                        <a href="services.html" class="text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm transition-colors">Services</a>
+                        <a href="portfolio.html" class="text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm transition-colors">Portfolio</a>
+                        <a href="about.html" class="text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm transition-colors">About Us</a>
+                        <a href="contact.html" class="text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm transition-colors">Contact</a>
+                       
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-purple-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="text-gray-700 hover:text-black block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="services.html" class="text-gray-700 hover:text-black block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                <a href="portfolio.html" class="text-gray-700 hover:text-black block px-3 py-2 rounded-md text-base font-medium">Portfolio</a>
+                <a href="about.html" class="text-gray-700 hover:text-black block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                <a href="contact.html" class="text-gray-700 hover:text-black block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main>
+        <section id="book" class="hero-gradient min-h-screen flex items-center justify-center pt-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="fade-in">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                        Book Your Session
+                    </h1>
+                    <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto">
+                        Ready to capture your special moments? Fill out our booking form and we'll create a custom package just for you
+                    </p>
+                    <div class="space-x-4">
+                        <button onclick="document.getElementById('booking-form').scrollIntoView({behavior: 'smooth'})" class="bg-white text-black px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            Start Booking
+                        </button>
+                        <button onclick="window.open('tel:+27636056900')" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-black transition-colors">
+                            Call to Book
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Process Steps -->
+        <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Simple Booking Process</h2>
+                    <p class="text-lg text-gray-600">Just 3 easy steps to secure your session</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="step-indicator step-active w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-xl">
+                            1
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Fill the Form</h3>
+                        <p class="text-gray-600">Tell us about your event, preferred date, and requirements</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="step-indicator bg-gray-300 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-xl">
+                            2
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Get Your Quote</h3>
+                        <p class="text-gray-600">We'll send you a detailed quote within 24 hours</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="step-indicator bg-gray-300 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-xl">
+                            3
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Confirm & Pay</h3>
+                        <p class="text-gray-600">Secure your date with a deposit and finalize details</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Form Section -->
+        <section id="booking-form" class="py-20 bg-gray-50">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Book Your Session</h2>
+                    <p class="text-lg text-gray-600">
+                        Complete the form below and we'll create a custom package for your needs
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <!-- Pricing Summary -->
+                    <div id="pricingSummary" class="bg-gradient-to-r from-purple-600 to-blue-600 text-white p-6">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <h3 class="text-xl font-bold">Estimated Total</h3>
+                                <p class="text-sm opacity-90">Based on your selections</p>
+                            </div>
+                            <div class="text-right">
+                                <div id="totalPrice" class="text-3xl font-bold">R0</div>
+                                <p class="text-sm opacity-90">Starting price</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form id="bookingForm" action="https://formsubmit.co/skhabagallery09@gmail.com" method="POST" class="p-8 space-y-8">
+                        <!-- FormSubmit Configuration -->
+                        <input type="hidden" name="_subject" value="New Booking Request - Skhaba Photography">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="javascript:void(0)">
+                        <!-- Personal Information -->
+                        <div class="space-y-6">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-6">Your Details</h3>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="fullName" class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                                    <input type="text" id="fullName" name="fullName" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                                    <input type="email" id="email" name="email" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Service & Event Details -->
+                        <div class="space-y-6">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-6">Event Details</h3>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="serviceType" class="block text-sm font-medium text-gray-700 mb-2">Service Type *</label>
+                                    <select id="serviceType" name="serviceType" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" onchange="updatePricing()">
+                                        <option value="">Select a service</option>
+                                        <option value="wedding-photography" data-price="25000">Wedding Photography</option>
+                                        <option value="wedding-videography" data-price="35000">Wedding Videography</option>
+                                        <option value="wedding-combo" data-price="50000">Wedding Photo + Video</option>
+                                        <option value="portrait-session" data-price="5000">Portrait Session</option>
+                                        <option value="family-photography" data-price="7000">Family Photography</option>
+                                        <option value="corporate-event" data-price="15000">Corporate Event</option>
+                                        <option value="music-video" data-price="20000">Music Video Production</option>
+                                        <option value="engagement-session" data-price="6000">Engagement Session</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="duration" class="block text-sm font-medium text-gray-700 mb-2">Duration *</label>
+                                    <select id="duration" name="duration" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" onchange="updatePricing()">
+                                        <option value="">Select duration</option>
+                                        <option value="1">1-2 Hours</option>
+                                        <option value="3">3-4 Hours</option>
+                                        <option value="6">Half Day (6 Hours)</option>
+                                        <option value="8">Full Day (8+ Hours)</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="eventDate" class="block text-sm font-medium text-gray-700 mb-2">Event Date *</label>
+                                    <input type="date" id="eventDate" name="eventDate" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                                </div>
+                                <div>
+                                    <label for="eventTime" class="block text-sm font-medium text-gray-700 mb-2">Start Time *</label>
+                                    <input type="time" id="eventTime" name="eventTime" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="eventLocation" class="block text-sm font-medium text-gray-700 mb-2">Event Location *</label>
+                                <input type="text" id="eventLocation" name="eventLocation" required placeholder="Venue name or address" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                            </div>
+
+                            <div>
+                                <label for="specialRequests" class="block text-sm font-medium text-gray-700 mb-2">Special Requests (Optional)</label>
+                                <textarea id="specialRequests" name="specialRequests" rows="3" placeholder="Any specific requirements, shots you want, or additional details..." class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Terms & Conditions -->
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <input type="checkbox" id="terms" name="terms" required class="mt-1 mr-3">
+                                <label for="terms" class="text-sm text-gray-700">
+                                    I agree to the <a href="#" onclick="openTermsModal()" class="text-purple-600 hover:text-purple-800 underline">Terms & Conditions</a> and <a href="#" onclick="openPrivacyModal()" class="text-purple-600 hover:text-purple-800 underline">Privacy Policy</a>, and understand that a 50% deposit is required to secure the booking date. *
+                                </label>
+                            </div>
+                            <div class="flex items-start">
+                                <input type="checkbox" id="newsletter" name="newsletter" class="mt-1 mr-3">
+                                <label for="newsletter" class="text-sm text-gray-700">
+                                    I'd like to receive updates about new services, special offers, and photography tips.
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="text-center pt-6">
+                            <button type="submit" class="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-12 py-4 rounded-lg font-semibold text-lg hover:from-purple-700 hover:to-blue-700 transition-all transform hover:scale-105">
+                                Submit Booking Request
+                            </button>
+                            <p class="text-sm text-gray-600 mt-4">
+                                We'll review your request and send you a detailed quote within 24 hours
+                            </p>
+                        </div>
+                    </form>
+
+                    <!-- Success Message -->
+                    <div id="successMessage" class="hidden success-message text-white p-8 m-8 rounded-lg">
+                        <div class="flex items-center">
+                            <svg class="w-8 h-8 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <div>
+                                <h3 class="text-xl font-semibold">Booking Request Submitted!</h3>
+                                <p class="text-sm mt-1">Thank you for choosing Skhaba! We'll review your request and send you a detailed quote within 24 hours. Check your email for confirmation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Privacy Policy Modal -->
+        <div id="privacyModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+            <div class="bg-white rounded-lg max-w-4xl max-h-[90vh] overflow-y-auto">
+                <div class="sticky top-0 bg-white border-b p-6 flex justify-between items-center">
+                    <h2 class="text-2xl font-bold text-gray-800">Privacy Policy</h2>
+                    <button onclick="closePrivacyModal()" class="text-gray-500 hover:text-gray-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="p-6 space-y-6">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">1. Information We Collect</h3>
+                        <div class="space-y-3">
+                            <div>
+                                <h4 class="font-medium text-gray-700 mb-2">Personal Information:</h4>
+                                <ul class="space-y-1 text-gray-600 text-sm ml-4">
+                                    <li>• Name, email address, phone number, and mailing address</li>
+                                    <li>• Event details, dates, locations, and special requirements</li>
+                                    <li>• Payment information (processed securely through third-party providers)</li>
+                                    <li>• Communication preferences and marketing consent</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-700 mb-2">Technical Information:</h4>
+                                <ul class="space-y-1 text-gray-600 text-sm ml-4">
+                                    <li>• IP address, browser type, and device information</li>
+                                    <li>• Website usage data and interaction patterns</li>
+                                    <li>• Cookies and similar tracking technologies</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">2. How We Use Your Information</h3>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li>• <strong>Service Delivery:</strong> Process bookings, coordinate events, and deliver photography/videography services</li>
+                            <li>• <strong>Communication:</strong> Send booking confirmations, updates, and respond to inquiries</li>
+                            <li>• <strong>Payment Processing:</strong> Handle deposits, final payments, and invoicing</li>
+                            <li>• <strong>Marketing:</strong> Send newsletters, promotions, and service updates (with your consent)</li>
+                            <li>• <strong>Legal Compliance:</strong> Meet legal obligations and protect our business interests</li>
+                            <li>• <strong>Service Improvement:</strong> Analyze usage patterns to enhance our services</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">3. Information Sharing and Disclosure</h3>
+                        <div class="space-y-3">
+                            <p class="text-gray-600 text-sm"><strong>We do not sell your personal information.</strong> We may share information in these limited circumstances:</p>
+                            <ul class="space-y-2 text-gray-600 text-sm">
+                                <li>• <strong>Service Providers:</strong> Trusted third parties who help deliver our services (payment processors, cloud storage, email services)</li>
+                                <li>• <strong>Legal Requirements:</strong> When required by law, court order, or to protect our legal rights</li>
+                                <li>• <strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of business assets</li>
+                                <li>• <strong>Consent:</strong> When you explicitly authorize us to share specific information</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">4. Data Security and Storage</h3>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li>• <strong>Encryption:</strong> All sensitive data transmitted using SSL/TLS encryption</li>
+                            <li>• <strong>Secure Storage:</strong> Data stored on secure, password-protected servers</li>
+                            <li>• <strong>Access Controls:</strong> Limited access to personal information on a need-to-know basis</li>
+                            <li>• <strong>Regular Backups:</strong> Secure backup systems to prevent data loss</li>
+                            <li>• <strong>Retention:</strong> Personal data retained only as long as necessary for business purposes</li>
+                            <li>• <strong>Deletion:</strong> Secure deletion of data when no longer needed</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">5. Your Privacy Rights</h3>
+                        <div class="space-y-3">
+                            <p class="text-gray-600 text-sm">You have the following rights regarding your personal information:</p>
+                            <ul class="space-y-2 text-gray-600 text-sm">
+                                <li>• <strong>Access:</strong> Request a copy of the personal information we hold about you</li>
+                                <li>• <strong>Correction:</strong> Request correction of inaccurate or incomplete information</li>
+                                <li>• <strong>Deletion:</strong> Request deletion of your personal information (subject to legal requirements)</li>
+                                <li>• <strong>Portability:</strong> Request transfer of your data to another service provider</li>
+                                <li>• <strong>Opt-out:</strong> Unsubscribe from marketing communications at any time</li>
+                                <li>• <strong>Restriction:</strong> Request limitation of how we process your information</li>
+                            </ul>
+                            <p class="text-gray-600 text-sm mt-3">To exercise these rights, contact us at hlatshwayonkanyiso8@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">6. Cookies and Tracking</h3>
+                        <div class="space-y-3">
+                            <p class="text-gray-600 text-sm">We use cookies and similar technologies to:</p>
+                            <ul class="space-y-2 text-gray-600 text-sm">
+                                <li>• Remember your preferences and settings</li>
+                                <li>• Analyze website traffic and user behavior</li>
+                                <li>• Provide personalized content and advertisements</li>
+                                <li>• Ensure website security and prevent fraud</li>
+                            </ul>
+                            <p class="text-gray-600 text-sm">You can control cookies through your browser settings, but some features may not work properly if disabled.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">7. Photography and Image Rights</h3>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li>• <strong>Client Images:</strong> Photos/videos of you and your event are your personal information</li>
+                            <li>• <strong>Portfolio Use:</strong> We may use images for business promotion with your consent</li>
+                            <li>• <strong>Social Media:</strong> Images may be shared on our social media channels unless you opt out</li>
+                            <li>• <strong>Third Parties:</strong> We do not share your images with third parties without permission</li>
+                            <li>• <strong>Removal Requests:</strong> You can request removal of your images from our marketing materials</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">8. Third-Party Services</h3>
+                        <div class="space-y-3">
+                            <p class="text-gray-600 text-sm">We work with trusted third-party services:</p>
+                            <ul class="space-y-2 text-gray-600 text-sm">
+                                <li>• <strong>Payment Processors:</strong> Secure handling of credit card and bank information</li>
+                                <li>• <strong>Cloud Storage:</strong> Secure backup and storage of your images/videos</li>
+                                <li>• <strong>Email Services:</strong> Delivery of communications and galleries</li>
+                                <li>• <strong>Analytics:</strong> Website performance and user experience analysis</li>
+                            </ul>
+                            <p class="text-gray-600 text-sm">These services have their own privacy policies and security measures.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">9. International Data Transfers</h3>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li>• Data may be processed in countries outside your residence</li>
+                            <li>• We ensure appropriate safeguards are in place for international transfers</li>
+                            <li>• All transfers comply with applicable data protection laws</li>
+                            <li>• You consent to international transfers when using our services</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">10. Children's Privacy</h3>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li>• Our services are not directed to children under 13</li>
+                            <li>• We do not knowingly collect information from children under 13</li>
+                            <li>• Parents/guardians must provide consent for minors' participation in events</li>
+                            <li>• Contact us immediately if you believe we have collected a child's information</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">11. Policy Updates</h3>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li>• We may update this privacy policy periodically</li>
+                            <li>• Significant changes will be communicated via email or website notice</li>
+                            <li>• Continued use of our services constitutes acceptance of updates</li>
+                            <li>• Previous versions available upon request</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">Contact Information</h3>
+                        <p class="text-sm text-gray-600 mb-2">
+                            For privacy-related questions, concerns, or to exercise your rights:
+                        </p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li><strong>Email:</strong> hlatshwayonkanyiso8@gmail.com</li>
+                            <li><strong>Phone:</strong> +1 (555) 123-4567</li>
+                            <li><strong>Mail:</strong> Skhaba Photography, 123 Business Ave, City, State, ZIP</li>
+                        </ul>
+                        <p class="text-sm text-gray-600 mt-3">
+                            <strong>Last Updated:</strong> December 2024
+                        </p>
+                    </div>
+                </div>
+                <div class="sticky bottom-0 bg-white border-t p-6">
+                    <button onclick="closePrivacyModal()" class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                        I Understand
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Terms and Conditions Modal -->
+        <div id="termsModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+            <div class="bg-white rounded-lg max-w-4xl max-h-[90vh] overflow-y-auto">
+                <div class="sticky top-0 bg-white border-b p-6 flex justify-between items-center">
+                    <h2 class="text-2xl font-bold text-gray-800">Terms and Conditions</h2>
+                    <button onclick="closeTermsModal()" class="text-gray-500 hover:text-gray-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="p-6 space-y-6">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">1. Booking and Payment Terms</h3>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li>• A 50% non-refundable deposit is required to secure your booking date</li>
+                            <li>• Final payment is due 7 days before the event date</li>
+                            <li>• Late payment may result in cancellation of services</li>
+                            <li>• All prices are subject to applicable taxes</li>
+                            <li>• Payment can be made via bank transfer, credit card, or cash</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">2. Cancellation Policy</h3>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li>• Cancellations more than 30 days before event: 50% refund of total payment</li>
+                            <li>• Cancellations 15-30 days before event: 25% refund of total payment</li>
+                            <li>• Cancellations less than 15 days before event: No refund</li>
+                            <li>• Deposit is non-refundable in all circumstances</li>
+                            <li>• Rescheduling is allowed once without penalty (subject to availability)</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">3. Service Delivery</h3>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li>• Standard delivery time is 2-3 weeks for edited photos/videos</li>
+                            <li>• Rush delivery (1 week) available for additional $200 fee</li>
+                            <li>• All images delivered via secure online gallery</li>
+                            <li>• High-resolution files included with full print release</li>
+                            <li>• Raw/unedited files not included unless specifically contracted</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">4. Client Responsibilities</h3>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li>• Provide accurate event details, timeline, and location information</li>
+                            <li>• Ensure venue allows professional photography/videography</li>
+                            <li>• Obtain necessary permits for outdoor/public locations</li>
+                            <li>• Provide vendor meal if event exceeds 6 hours</li>
+                            <li>• Designate a point person for day-of coordination</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">5. Weather and Force Majeure</h3>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li>• Outdoor sessions may be rescheduled due to severe weather</li>
+                            <li>• Light rain or overcast conditions do not constitute grounds for rescheduling</li>
+                            <li>• Force majeure events (natural disasters, government restrictions) allow for rescheduling without penalty</li>
+                            <li>• Alternative indoor locations may be suggested when possible</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">6. Copyright and Usage Rights</h3>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li>• Skhaba retains copyright to all images and videos created</li>
+                            <li>• Client receives full print release for personal use</li>
+                            <li>• Commercial use requires separate licensing agreement</li>
+                            <li>• Skhaba may use images for portfolio, marketing, and social media</li>
+                            <li>• Client may request specific images not be used publicly</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">7. Equipment and Technical Issues</h3>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li>• Backup equipment carried to all events</li>
+                            <li>• Technical failures beyond our control do not constitute breach of contract</li>
+                            <li>• Memory card corruption or equipment failure may result in partial delivery</li>
+                            <li>• Client will be notified immediately of any technical issues</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">8. Liability and Insurance</h3>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li>• Skhaba carries professional liability insurance</li>
+                            <li>• Liability limited to the total contract value</li>
+                            <li>• Client responsible for guest safety and venue compliance</li>
+                            <li>• Skhaba not responsible for lost or damaged personal items</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">9. Privacy and Data Protection</h3>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li>• Client information kept confidential and secure</li>
+                            <li>• Images stored securely with backup systems</li>
+                            <li>• Data not shared with third parties without consent</li>
+                            <li>• Client may request data deletion after project completion</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">10. Dispute Resolution</h3>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li>• Good faith effort to resolve disputes through direct communication</li>
+                            <li>• Mediation preferred before legal action</li>
+                            <li>• Local jurisdiction applies to all legal matters</li>
+                            <li>• Contract governed by local state/provincial laws</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <p class="text-sm text-gray-600">
+                            <strong>Last Updated:</strong> December 2024<br>
+                            <strong>Contact:</strong> For questions about these terms, contact us at hlatshwayonkanyiso8@gmail.com or +1 (555) 123-4567
+                        </p>
+                    </div>
+                </div>
+                <div class="sticky bottom-0 bg-white border-t p-6">
+                    <button onclick="acceptTerms()" class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                        I Accept These Terms
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why Choose Us -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Why Choose Skhaba?</h2>
+                    <p class="text-lg text-gray-600">Professional service you can trust</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="pricing-card bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-8 text-center">
+                        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Professional Quality</h3>
+                        <p class="text-gray-600">High-end equipment and years of experience ensure stunning results every time.</p>
+                    </div>
+
+                    <div class="pricing-card bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-8 text-center">
+                        <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Fast Delivery</h3>
+                        <p class="text-gray-600">Quick turnaround times without compromising on quality. Rush delivery available.</p>
+                    </div>
+
+                    <div class="pricing-card bg-gradient-to-br from-green-50 to-emerald-50 rounded-lg p-8 text-center">
+                        <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Personal Touch</h3>
+                        <p class="text-gray-600">We work closely with you to understand your vision and bring it to life perfectly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+   <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Skhaba Gallery</h3>
+                    <p class="text-gray-400">Capturing life's precious moments through the art of photography.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="portfolio.html" class="text-gray-400 hover:text-white transition-colors">Portfolio</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Photography Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Weddings</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Portraits</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Events</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Family Photos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <p class="text-gray-400 mb-2">📧 skhabagallery09@gmail.com</p>
+                    <p class="text-gray-400 mb-2">📞 +27 (63) 605-6900</p>
+                    <p class="text-gray-400 mb-4">📍 No Physical Offices, Based Remotely</p>
+                    <div class="flex space-x-4">
+                        <a href="https://wa.me/27636056900" target="_blank" class="text-gray-400 hover:text-white transition-colors" title="WhatsApp">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/share/1Bfcm8YqCq/?mibextid=wwXIfr" target="_blank" class="text-gray-400 hover:text-white transition-colors" title="Facebook">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.tiktok.com/@skhaba_art_gallery?_t=ZS-90bG0aRPVwb&_r=1" target="_blank" class="text-gray-400 hover:text-white transition-colors" title="TikTok">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/skhaba_art_gallery?igsh=cnV1dmlnMG5xZGQx" target="_blank" class="text-gray-400 hover:text-white transition-colors" title="Instagram">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C8.396 0 7.989.013 7.041.048 6.094.082 5.52.204 5.036.388a3.9 3.9 0 0 0-1.414.923A3.9 3.9 0 0 0 2.7 2.725c-.183.484-.306 1.058-.34 2.005C2.326 5.678 2.313 6.085 2.313 9.706v4.588c0 3.621.013 4.028.048 4.976.034.947.157 1.521.34 2.005a3.9 3.9 0 0 0 .923 1.414 3.9 3.9 0 0 0 1.414.923c.484.183 1.058.306 2.005.34.948.035 1.355.048 4.976.048h4.588c3.621 0 4.028-.013 4.976-.048.947-.034 1.521-.157 2.005-.34a3.9 3.9 0 0 0 1.414-.923 3.9 3.9 0 0 0 .923-1.414c.183-.484.306-1.058.34-2.005.035-.948.048-1.355.048-4.976V9.706c0-3.621-.013-4.028-.048-4.976-.034-.947-.157-1.521-.34-2.005a3.9 3.9 0 0 0-.923-1.414A3.9 3.9 0 0 0 19.229.388c-.484-.183-1.058-.306-2.005-.34C16.276.013 15.869 0 12.248 0h-.23zm-.117 5.4a6.6 6.6 0 1 1 0 13.2 6.6 6.6 0 0 1 0-13.2zm8.4-2.205a1.54 1.54 0 1 1-3.08 0 1.54 1.54 0 0 1 3.08 0zM12 7.25a4.75 4.75 0 1 0 0 9.5 4.75 4.75 0 0 0 0-9.5z"/>
+                            </svg>
+                        </a>
+                        <a href="https://youtube.com/@skhabagallery09?si=nxgpPP5BenqKfyxg" target="_blank" class="text-gray-400 hover:text-white transition-colors" title="YouTube">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2025 Skhaba. All rights reserved. | Powered by Coderise Collective</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Pricing calculation
+        function updatePricing() {
+            const serviceType = document.getElementById('serviceType');
+            const duration = document.getElementById('duration');
+            
+            let basePrice = 0;
+            let totalPrice = 0;
+            
+            // Base service price
+            if (serviceType.value) {
+                basePrice = parseInt(serviceType.selectedOptions[0].dataset.price) || 0;
+                totalPrice = basePrice;
+            }
+            
+            // Duration multiplier
+            if (duration.value && basePrice > 0) {
+                const hours = parseInt(duration.value);
+                if (hours >= 6) {
+                    totalPrice = basePrice * 1.3; // 30% increase for half/full day
+                } else if (hours >= 3) {
+                    totalPrice = basePrice * 1.1; // 10% increase for 3-4 hours
+                }
+            }
+            
+            // Update display
+            document.getElementById('totalPrice').textContent = 'R' + Math.round(totalPrice).toLocaleString();
+        }
+
+        // Travel calculation (simplified)
+        function calculateTravel() {
+            const location = document.getElementById('eventLocation').value.toLowerCase();
+            const travelInfo = document.getElementById('travelInfo');
+            
+            if (location) {
+                // Simplified distance calculation based on keywords
+                let distance = 'Within 25 miles';
+                let fee = 'No travel fee';
+                
+                if (location.includes('downtown') || location.includes('city center')) {
+                    distance = '15 miles';
+                } else if (location.includes('suburb') || location.includes('county')) {
+                    distance = '35 miles';
+                    fee = '+$50 travel fee';
+                } else if (location.includes('out of town') || location.includes('rural')) {
+                    distance = '50+ miles';
+                    fee = '+$100 travel fee';
+                }
+                
+                document.getElementById('travelDistance').textContent = distance;
+                document.getElementById('travelFee').textContent = fee;
+                travelInfo.classList.remove('hidden');
+            } else {
+                travelInfo.classList.add('hidden');
+            }
+        }
+
+        // Form submission
+        const bookingForm = document.getElementById('bookingForm');
+        const successMessage = document.getElementById('successMessage');
+
+        bookingForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+            
+            // Get form data for validation
+            const formData = new FormData(bookingForm);
+            const data = Object.fromEntries(formData);
+            
+            // Basic validation
+            if (!data.fullName || !data.email || !data.phone || !data.serviceType || !data.duration || !data.eventDate || !data.eventTime || !data.eventLocation) {
+                showNotification('Please fill in all required fields.', 'error');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(data.email)) {
+                showNotification('Please enter a valid email address.', 'error');
+                return;
+            }
+            
+            // Date validation
+            const eventDate = new Date(data.eventDate);
+            const today = new Date();
+            if (eventDate < today) {
+                showNotification('Event date cannot be in the past.', 'error');
+                return;
+            }
+            
+            // Terms validation
+            if (!data.terms) {
+                showNotification('Please accept the terms and conditions.', 'error');
+                return;
+            }
+            
+            // If validation passes, submit the form
+            const submitButton = bookingForm.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+            submitButton.textContent = 'Sending Request...';
+            submitButton.disabled = true;
+            
+            // Submit form using fetch to FormSubmit
+            fetch('https://formsubmit.co/hlatshwayonkanyiso8@gmail.com', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Show success message
+                    successMessage.classList.remove('hidden');
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    // Reset form
+                    bookingForm.reset();
+                    updatePricing();
+                    
+                    // Hide success message after 8 seconds
+                    setTimeout(() => {
+                        successMessage.classList.add('hidden');
+                    }, 8000);
+                    
+                    showNotification('Booking request sent successfully!', 'success');
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showNotification('There was an error sending your request. Please try again.', 'error');
+            })
+            .finally(() => {
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+            });
+        });
+
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 p-4 rounded-lg text-white z-50 ${type === 'error' ? 'bg-red-500' : 'bg-green-500'}`;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 4000);
+        }
+
+        // Set minimum date to today
+        const eventDateInput = document.getElementById('eventDate');
+        const today = new Date().toISOString().split('T')[0];
+        eventDateInput.setAttribute('min', today);
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Privacy Policy Modal
+        function openPrivacyModal() {
+            document.getElementById('privacyModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePrivacyModal() {
+            document.getElementById('privacyModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Terms and Conditions Modal
+        function openTermsModal() {
+            document.getElementById('termsModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeTermsModal() {
+            document.getElementById('termsModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function acceptTerms() {
+            document.getElementById('terms').checked = true;
+            closeTermsModal();
+            showNotification('Terms and conditions accepted!', 'success');
+        }
+
+        // Close modals when clicking outside
+        document.getElementById('privacyModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePrivacyModal();
+            }
+        });
+
+        document.getElementById('termsModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeTermsModal();
+            }
+        });
+
+        // Initialize pricing on page load
+        updatePricing();
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98ff160ed4b673b4',t:'MTc2MDY5NjY2Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
